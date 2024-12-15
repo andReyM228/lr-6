@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання зі стрілочними функціями</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- №1 -->
+<section class="wrapper">
+    <h2>Завдання 1: Сума трьох чисел</h2>
+    <input type="number" id="inp1" placeholder="Число a">
+    <input type="number" id="inp2" placeholder="Число b">
+    <input type="number" id="inp3" placeholder="Число c">
+    <button id="btn1">Розрахувати</button>
+    <p id="txt1">Результат: </p>
+</section>
+
+<!-- №2 -->
+<section class="wrapper">
+    <h2>Завдання 2: Додавання елементів</h2>
+    <button id="btn2">Створити елемент</button>
+    <div id="task2"></div>
+</section>
+
+<script>
+    // №1
+    let button1 = document.querySelector('#btn1');
+    let txt1 = document.querySelector('#txt1');
+
+    button1.addEventListener("click", () => {
+        let a = document.querySelector('#inp1').value;
+        let b = document.querySelector('#inp2').value;
+        let c = document.querySelector('#inp3').value;
+        let result = Number(a) + Number(b) + Number(c);
+        txt1.innerHTML = "Результат: " + result;
+    });
+
+    // №2
+    let button2 = document.querySelector('#btn2');
+    let task2 = document.querySelector('#task2');
+
+    function addCircle() {
+        let newCircle = document.createElement('div');
+        newCircle.classList.add('circle');
+        task2.appendChild(newCircle);
+    }
+
+    button2.addEventListener('click', addCircle);
+</script>
+
+</body>
+</html>
